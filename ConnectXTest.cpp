@@ -5,6 +5,8 @@
 #include <gtest/gtest.h>
 #include <iostream>
 #include "ConnectX.h"
+#define DEFAULT_WIDTH 7
+#define DEFAULT_HEIGHT 6
 
 
 using namespace std;
@@ -13,6 +15,7 @@ static const Piece INVALID = -1;
 static const Piece EMPTY = 0;
 static const Piece WHITE = 1;
 static const Piece BLACK = 2;
+
 
 class ConnectXTest : public ::testing::Test
 {
@@ -28,10 +31,15 @@ TEST(ConnectXTest, sanityCheck)
 	ASSERT_TRUE(true);
 }
 
-//Testing Negative Init
-TEST(ConnectXTest, negativeInit)
+//Testing Negative Init, 
+TEST(ConnectXTest, negativeInit) //Getting garbage value for width out of bound
 {
     ConnectX x(-10,1,1);
+   // x.showBoard();
+    ASSERT_EQ(EMPTY, x.at(6,0)); //Testing the width
+    ASSERT_EQ(INVALID, x.at(7,0)); //Testing Width outOfBound
+    ASSERT_EQ(EMPTY, x.at(0,5)); //Testing Height
+    ASSERT_EQ(INVALID, x.at(0,6)); //Testing height outOfBound
 }
 
 
@@ -58,7 +66,6 @@ TEST(ConnectXTest, outBounds)
     ConnectX x(10,10,1);
     x.placePiece(1);
     int flag = x.at(12,12);
-    //cout<<"out bounds flag = "<<flag<<endl;
     ASSERT_EQ(INVALID, flag);
 }
 
@@ -72,7 +79,6 @@ TEST(ConnectXTest, inBoundPlace)
 
 TEST(ConnectXTest, blackTurn)
 {
-    
     ConnectX x(10,10,1);
     int flag = x.whoseTurn();
     ASSERT_EQ(BLACK,flag);
