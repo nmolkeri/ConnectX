@@ -16,8 +16,8 @@ private:
 	int toWin;
 	std::vector< std::vector<int> > board;
 	void toggleTurn();
-	bool inBounds(int,int);
-	
+    bool inBounds(int,int);
+
 public:
 	static const Piece INVALID = -1;
 	static const Piece EMPTY = 0;
@@ -29,6 +29,7 @@ public:
 	void showBoard();
 	Piece whoseTurn();
 	void placePiece(int);
+
 };
 
 #endif //end of class definition _CONNECTX_H

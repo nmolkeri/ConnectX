@@ -1,6 +1,6 @@
 #include "ConnectX.h"
 #include <iostream>
-
+using namespace std;
 // constructor provides customized dimensions and number of
 // sequential pieces (x) it takes to win the game
 ConnectX::ConnectX(int wide, int high, int x)
@@ -33,7 +33,10 @@ void ConnectX::toggleTurn()
 {
 	if(turn == WHITE)
 	{
+        //cout<<"Toggling turn to black"<<endl;
+        
 		turn = BLACK;
+        //cout<<"turn = "<<turn<<endl;
 	}
 	else
 		turn = WHITE;
