@@ -83,11 +83,18 @@ TEST(ConnectXTest, whiteTurn)
 {
     ConnectX x(10,10,1);
     x.placePiece(1);
-    bool flag = x.whoseTurn();
+    int flag = x.whoseTurn();
     ASSERT_EQ(WHITE,flag);
 }
 
-//
+TEST(ConnectXTest, invalidPlace)
+{
+    ConnectX x(10,1,1);
+    x.placePiece(1);
+    x.placePiece(1);
+    ASSERT_EQ(INVALID, x.at(1,1));
+}
+
 //TEST(ConnectXTest,)
 //{
 //    
