@@ -188,7 +188,7 @@
         -:  183:const _Facet&
         -:  184:use_facet(const locale& __l)
         -:  185:{
-       64:  186:    return static_cast<const _Facet&>(*__l.use_facet(_Facet::id));
+       41:  186:    return static_cast<const _Facet&>(*__l.use_facet(_Facet::id));
         -:  187:}
         -:  188:
         -:  189:// template <class _CharT> class collate;
@@ -592,7 +592,7 @@
         -:  587:    _LIBCPP_ALWAYS_INLINE
         -:  588:    char_type widen(char __c) const
         -:  589:    {
-       64:  590:        return do_widen(__c);
+       41:  590:        return do_widen(__c);
         -:  591:    }
         -:  592:
         -:  593:    _LIBCPP_ALWAYS_INLINE

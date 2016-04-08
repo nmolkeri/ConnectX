@@ -1503,7 +1503,7 @@
         -: 1498:vector<_Tp, _Allocator>::operator[](size_type __n)
         -: 1499:{
         -: 1500:    _LIBCPP_ASSERT(__n < size(), "vector[] index out of bounds");
-     1641: 1501:    return this->__begin_[__n];
+     1241: 1501:    return this->__begin_[__n];
         -: 1502:}
         -: 1503:
         -: 1504:template <class _Tp, class _Allocator>

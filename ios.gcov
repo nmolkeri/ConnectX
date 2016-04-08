@@ -339,7 +339,7 @@
         -:  334:               }
         -:  335:
         -:  336:    void init(void* __sb);
-     1037:  337:    _LIBCPP_ALWAYS_INLINE void* rdbuf() const {return __rdbuf_;}
+      355:  337:    _LIBCPP_ALWAYS_INLINE void* rdbuf() const {return __rdbuf_;}
         -:  338:
         -:  339:    _LIBCPP_ALWAYS_INLINE
         -:  340:    void rdbuf(void* __sb)
@@ -439,7 +439,7 @@
         -:  434:ios_base::fmtflags
         -:  435:ios_base::flags() const
         -:  436:{
-     1037:  437:    return __fmtflags_;
+      355:  437:    return __fmtflags_;
         -:  438:}
         -:  439:
         -:  440:inline _LIBCPP_INLINE_VISIBILITY
@@ -501,16 +501,16 @@
         -:  496:streamsize
         -:  497:ios_base::width() const
         -:  498:{
-     1037:  499:    return __width_;
+      355:  499:    return __width_;
         -:  500:}
         -:  501:
         -:  502:inline _LIBCPP_INLINE_VISIBILITY
         -:  503:streamsize
         -:  504:ios_base::width(streamsize __wide)
         -:  505:{
-     1037:  506:    streamsize __r = __width_;
-     1037:  507:    __width_ = __wide;
-     1037:  508:    return __r;
+      355:  506:    streamsize __r = __width_;
+      355:  507:    __width_ = __wide;
+      355:  508:    return __r;
         -:  509:}
         -:  510:
         -:  511:// iostate
@@ -698,7 +698,7 @@
         -:  693:basic_streambuf<_CharT, _Traits>*
         -:  694:basic_ios<_CharT, _Traits>::rdbuf() const
         -:  695:{
-     1037:  696:    return static_cast<basic_streambuf<char_type, traits_type>*>(ios_base::rdbuf());
+      355:  696:    return static_cast<basic_streambuf<char_type, traits_type>*>(ios_base::rdbuf());
         -:  697:}
         -:  698:
         -:  699:template <class _CharT, class _Traits>
@@ -736,7 +736,7 @@
         -:  731:_CharT
         -:  732:basic_ios<_CharT, _Traits>::widen(char __c) const
         -:  733:{
-      192:  734:    return use_facet<ctype<char_type> >(getloc()).widen(__c);
+      123:  734:    return use_facet<ctype<char_type> >(getloc()).widen(__c);
     #####:  735:}
         -:  736:
         -:  737:template <class _CharT, class _Traits>
@@ -744,9 +744,9 @@
         -:  739:_CharT
         -:  740:basic_ios<_CharT, _Traits>::fill() const
         -:  741:{
-     1037:  742:    if (traits_type::eq_int_type(traits_type::eof(), __fill_))
-       42:  743:        __fill_ = widen(' ');
-     1037:  744:    return __fill_;
+      355:  742:    if (traits_type::eq_int_type(traits_type::eof(), __fill_))
+       41:  743:        __fill_ = widen(' ');
+      355:  744:    return __fill_;
         -:  745:}
         -:  746:
         -:  747:template <class _CharT, class _Traits>

@@ -1488,16 +1488,16 @@
         -: 1483:                 const _CharT* __ob, const _CharT* __op, const _CharT* __oe,
         -: 1484:                 ios_base& __iob, _CharT __fl)
         -: 1485:{
-     1037: 1486:    if (__s.__sbuf_ == nullptr)
+      355: 1486:    if (__s.__sbuf_ == nullptr)
     #####: 1487:        return __s;
-     1037: 1488:    streamsize __sz = __oe - __ob;
-     1037: 1489:    streamsize __ns = __iob.width();
-     1037: 1490:    if (__ns > __sz)
+      355: 1488:    streamsize __sz = __oe - __ob;
+      355: 1489:    streamsize __ns = __iob.width();
+      355: 1490:    if (__ns > __sz)
     #####: 1491:        __ns -= __sz;
         -: 1492:    else
-     1037: 1493:        __ns = 0;
-     1037: 1494:    streamsize __np = __op - __ob;
-     1037: 1495:    if (__np > 0)
+      355: 1493:        __ns = 0;
+      355: 1494:    streamsize __np = __op - __ob;
+      355: 1495:    if (__np > 0)
         -: 1496:    {
     #####: 1497:        if (__s.__sbuf_->sputn(__ob, __np) != __np)
         -: 1498:        {
@@ -1505,7 +1505,7 @@
     #####: 1500:            return __s;
         -: 1501:        }
     #####: 1502:    }
-     1037: 1503:    if (__ns > 0)
+      355: 1503:    if (__ns > 0)
         -: 1504:    {
     #####: 1505:        basic_string<_CharT, _Traits> __sp(__ns, __fl);
     #####: 1506:        if (__s.__sbuf_->sputn(__sp.data(), __ns) != __ns)
@@ -1514,18 +1514,18 @@
     #####: 1509:            return __s;
         -: 1510:        }
     #####: 1511:    }
-     1037: 1512:    __np = __oe - __op;
-     1037: 1513:    if (__np > 0)
+      355: 1512:    __np = __oe - __op;
+      355: 1513:    if (__np > 0)
         -: 1514:    {
-     1037: 1515:        if (__s.__sbuf_->sputn(__op, __np) != __np)
+      355: 1515:        if (__s.__sbuf_->sputn(__op, __np) != __np)
         -: 1516:        {
     #####: 1517:            __s.__sbuf_ = nullptr;
     #####: 1518:            return __s;
         -: 1519:        }
-     1037: 1520:    }
-     1037: 1521:    __iob.width(0);
-     1037: 1522:    return __s;
-     1037: 1523:}
+      355: 1520:    }
+      355: 1521:    __iob.width(0);
+      355: 1522:    return __s;
+      355: 1523:}
         -: 1524:
         -: 1525:#endif
         -: 1526:

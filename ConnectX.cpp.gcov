@@ -52,47 +52,47 @@
         -:   47:bool ConnectX::inBounds(int w, int h)
         -:   48:{
         -:   49:	bool inside;
-      440:   50:	if( w>=width || w<0 )
+       40:   50:	if( w>=width || w<0 )
         3:   51:		inside = false;
         -:   52:	else
-      218:   53:		inside = true;
+       18:   53:		inside = true;
         -:   54:
-      442:   55:	if( h<0 || h>=height )
+       42:   55:	if( h<0 || h>=height )
         2:   56:		inside = false;
         -:   57:	else
-      219:   58:		inside = true;
+       19:   58:		inside = true;
         -:   59:
-      221:   60:	return inside;
+       21:   60:	return inside;
         -:   61:}
         -:   62:
         -:   63:// Prints out the board to the command line, showing both
         -:   64:// empty places and where each player has placed pieces
         -:   65:void ConnectX::showBoard()
         -:   66:{
-        2:   67:	std::cout<<"   ";
-       44:   68:	for(int w = 0; w < width; w++)
+    #####:   67:	std::cout<<"   ";
+    #####:   68:	for(int w = 0; w < width; w++)
         -:   69:	{
-       20:   70:		std::cout<<"["<<w<<"]";
-       20:   71:	}
-        2:   72:	std::cout<<std::endl;
-       44:   73:	for(int h = 0; h < height; h++)
+    #####:   70:		std::cout<<"["<<w<<"]";
+    #####:   71:	}
+    #####:   72:	std::cout<<std::endl;
+    #####:   73:	for(int h = 0; h < height; h++)
         -:   74:	{
-       20:   75:		std::cout<<"["<<h<<"]";
-      440:   76:		for(int w = 0; w < width; w++)
+    #####:   75:		std::cout<<"["<<h<<"]";
+    #####:   76:		for(int w = 0; w < width; w++)
         -:   77:		{
         -:   78:			char place;
-      200:   79:			Piece val = at(w,h);
-      200:   80:			if(val == BLACK)
-        1:   81:				place = 'B';
-      199:   82:			else if( val == WHITE )
+    #####:   79:			Piece val = at(w,h);
+    #####:   80:			if(val == BLACK)
+    #####:   81:				place = 'B';
+    #####:   82:			else if( val == WHITE )
     #####:   83:				place = 'W';
         -:   84:			else
-      199:   85:				place = ' ';
-      200:   86:			std::cout<<"["<<place<<"]";
-      200:   87:		}
-       20:   88:		std::cout<<std::endl;
-       20:   89:	}
-        2:   90:}
+    #####:   85:				place = ' ';
+    #####:   86:			std::cout<<"["<<place<<"]";
+    #####:   87:		}
+    #####:   88:		std::cout<<std::endl;
+    #####:   89:	}
+    #####:   90:}
         -:   91:
         -:   92:// Returns whose turn it is (BLACK or WHITE)
         -:   93:Piece ConnectX::whoseTurn()
@@ -104,13 +104,13 @@
         -:   99:// INVALID if the provided location is not within the board
         -:  100:Piece ConnectX::at(int w, int h)
         -:  101:{
-      215:  102:	if( inBounds(w,h) )
+       15:  102:	if( inBounds(w,h) )
         -:  103:	{
-      213:  104:		return board[h][w];
+       13:  104:		return board[h][w];
         -:  105:	}
         -:  106:	else
         2:  107:		return INVALID;
-      215:  108:}
+       15:  108:}
         -:  109:
         -:  110:// Puts the current player's piece in a vertical column, where the piece falls
         -:  111:// to the lowest empty position available in the board. Placing a piece in a 

@@ -642,7 +642,7 @@
         -:  637:
         -:  638:    static inline int compare(const char_type* __s1, const char_type* __s2, size_t __n)
         -:  639:        {return __n == 0 ? 0 : memcmp(__s1, __s2, __n);}
-      620:  640:    static inline size_t length(const char_type* __s) {return strlen(__s);}
+      138:  640:    static inline size_t length(const char_type* __s) {return strlen(__s);}
         -:  641:    static inline const char_type* find(const char_type* __s, size_t __n, const char_type& __a)
         -:  642:        {return __n == 0 ? NULL : (const char_type*) memchr(__s, to_int_type(__a), __n);}
         -:  643:    static inline char_type* move(char_type* __s1, const char_type* __s2, size_t __n)
@@ -662,9 +662,9 @@
         -:  657:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
         -:  658:        {return int_type((unsigned char)__c);}
         -:  659:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
-     1064:  660:        {return __c1 == __c2;}
+      379:  660:        {return __c1 == __c2;}
         -:  661:    static inline _LIBCPP_CONSTEXPR int_type  eof() _NOEXCEPT
-     1133:  662:        {return int_type(EOF);}
+      448:  662:        {return int_type(EOF);}
         -:  663:};
         -:  664:
         -:  665:// char_traits<wchar_t>
