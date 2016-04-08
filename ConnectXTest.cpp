@@ -108,6 +108,16 @@ TEST(ConnectXTest, negativeOutOfBounds)
     ASSERT_EQ(INVALID, x.at(2,-1));
 }
 
+TEST(ConnectXTest,)
+{
+    ConnectX x(-10,-11,1);
+    ASSERT_EQ(EMPTY, x.at(6,0)); //Testing the width
+    ASSERT_EQ(INVALID, x.at(7,0)); //Testing Width outOfBound
+    ASSERT_EQ(EMPTY, x.at(0,5)); //Testing Height
+    ASSERT_EQ(INVALID, x.at(0,6)); //Testing height outOfBound
+}
+
+
 //TEST(ConnectXTest,)
 //{
 //    

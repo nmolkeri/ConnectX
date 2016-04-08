@@ -704,7 +704,8 @@
         -:  699:struct __less<_T1, _T1>
         -:  700:{
         -:  701:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
-      142:  702:    bool operator()(const _T1& __x, const _T1& __y) const {return __x < __y;}
+function _ZNKSt3__16__lessImmEclERKmS3_ called 156 returned 100% blocks executed 100%
+      156:  702:    bool operator()(const _T1& __x, const _T1& __y) const {return __x < __y;}
         -:  703:};
         -:  704:
         -:  705:template <class _T1>
@@ -2583,17 +2584,21 @@
         -: 2578:template <class _Tp, class _Compare>
         -: 2579:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
         -: 2580:const _Tp&
+function _ZNSt3__13minImNS_6__lessImmEEEERKT_S5_S5_T0_ called 81 returned 100% blocks executed 80%
         -: 2581:min(const _Tp& __a, const _Tp& __b, _Compare __comp)
         -: 2582:{
-      222: 2583:    return __comp(__b, __a) ? __b : __a;
+      243: 2583:    return __comp(__b, __a) ? __b : __a;
+branch  0 taken 0%
+branch  1 taken 100%
         -: 2584:}
         -: 2585:
         -: 2586:template <class _Tp>
         -: 2587:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
         -: 2588:const _Tp&
+function _ZNSt3__13minImEERKT_S3_S3_ called 81 returned 100% blocks executed 100%
         -: 2589:min(const _Tp& __a, const _Tp& __b)
         -: 2590:{
-       74: 2591:    return _VSTD::min(__a, __b, __less<_Tp>());
+       81: 2591:    return _VSTD::min(__a, __b, __less<_Tp>());
         -: 2592:}
         -: 2593:
         -: 2594:#ifndef _LIBCPP_HAS_NO_GENERALIZED_INITIALIZERS
@@ -2656,17 +2661,21 @@
         -: 2651:template <class _Tp, class _Compare>
         -: 2652:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
         -: 2653:const _Tp&
+function _ZNSt3__13maxImNS_6__lessImmEEEERKT_S5_S5_T0_ called 75 returned 100% blocks executed 80%
         -: 2654:max(const _Tp& __a, const _Tp& __b, _Compare __comp)
         -: 2655:{
-      204: 2656:    return __comp(__a, __b) ? __b : __a;
+      225: 2656:    return __comp(__a, __b) ? __b : __a;
+branch  0 taken 100%
+branch  1 taken 0%
         -: 2657:}
         -: 2658:
         -: 2659:template <class _Tp>
         -: 2660:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
         -: 2661:const _Tp&
+function _ZNSt3__13maxImEERKT_S3_S3_ called 75 returned 100% blocks executed 100%
         -: 2662:max(const _Tp& __a, const _Tp& __b)
         -: 2663:{
-       68: 2664:    return _VSTD::max(__a, __b, __less<_Tp>());
+       75: 2664:    return _VSTD::max(__a, __b, __less<_Tp>());
         -: 2665:}
         -: 2666:
         -: 2667:#ifndef _LIBCPP_HAS_NO_GENERALIZED_INITIALIZERS

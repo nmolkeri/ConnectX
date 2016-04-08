@@ -917,6 +917,7 @@
         -:  912:    struct __nat {};
         -:  913:public:
         -:  914:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__114pointer_traitsIPKcE10pointer_toERS1_ called 0 returned 0% blocks executed 0%
         -:  915:    static pointer pointer_to(typename conditional<is_void<element_type>::value,
         -:  916:                                      __nat, element_type>::type& __r) _NOEXCEPT
     #####:  917:        {return _VSTD::addressof(__r);}
@@ -1043,9 +1044,12 @@
         -: 1038:template <class _Tp>
         -: 1039:inline _LIBCPP_INLINE_VISIBILITY
         -: 1040:_Tp*
+function _ZNSt3__116__to_raw_pointerIiEEPT_S2_ called 1823 returned 100% blocks executed 100%
+function _ZNSt3__116__to_raw_pointerINS_6vectorIiNS_9allocatorIiEEEEEEPT_S6_ called 210 returned 100% blocks executed 100%
+function _ZNSt3__116__to_raw_pointerIKcEEPT_S3_ called 0 returned 0% blocks executed 0%
         -: 1041:__to_raw_pointer(_Tp* __p) _NOEXCEPT
         -: 1042:{
-     1880: 1043:    return __p;
+     2033: 1043:    return __p;
         -: 1044:}
         -: 1045:
         -: 1046:template <class _Pointer>
@@ -1440,23 +1444,30 @@
         -: 1435:#endif  // _LIBCPP_HAS_NO_TEMPLATE_ALIASES
         -: 1436:
         -: 1437:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIiNS1_IiEEEEEEE8allocateERS5_m called 10 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorIiEEE8allocateERS2_m called 71 returned 100% blocks executed 100%
         -: 1438:    static pointer allocate(allocator_type& __a, size_type __n)
-       74: 1439:        {return __a.allocate(__n);}
+       81: 1439:        {return __a.allocate(__n);}
         -: 1440:    _LIBCPP_INLINE_VISIBILITY
         -: 1441:    static pointer allocate(allocator_type& __a, size_type __n, const_void_pointer __hint)
         -: 1442:        {return allocate(__a, __n, __hint,
         -: 1443:            __has_allocate_hint<allocator_type, size_type, const_void_pointer>());}
         -: 1444:
         -: 1445:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__116allocator_traitsINS_9allocatorIiEEE10deallocateERS2_Pim called 71 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIiNS1_IiEEEEEEE10deallocateERS5_PS4_m called 10 returned 100% blocks executed 100%
         -: 1446:    static void deallocate(allocator_type& __a, pointer __p, size_type __n) _NOEXCEPT
-       74: 1447:        {__a.deallocate(__p, __n);}
+       81: 1447:        {__a.deallocate(__p, __n);}
         -: 1448:
         -: 1449:#ifndef _LIBCPP_HAS_NO_VARIADICS
         -: 1450:    template <class _Tp, class... _Args>
         -: 1451:        _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIiNS1_IiEEEEEEE9constructIS4_JEEEvRS5_PT_DpOT0_ called 65 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIiNS1_IiEEEEEEE9constructIS4_JS4_EEEvRS5_PT_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__116allocator_traitsINS_9allocatorIiEEE9constructIiJEEEvRS2_PT_DpOT0_ called 614 returned 100% blocks executed 100%
         -: 1452:        static void construct(allocator_type& __a, _Tp* __p, _Args&&... __args)
-     1262: 1453:            {__construct(__has_construct<allocator_type, _Tp*, _Args...>(),
-     1262: 1454:                         __a, __p, _VSTD::forward<_Args>(__args)...);}
+     1358: 1453:            {__construct(__has_construct<allocator_type, _Tp*, _Args...>(),
+     1358: 1454:                         __a, __p, _VSTD::forward<_Args>(__args)...);}
         -: 1455:#else  // _LIBCPP_HAS_NO_VARIADICS
         -: 1456:    template <class _Tp>
         -: 1457:        _LIBCPP_INLINE_VISIBILITY
@@ -1488,12 +1499,20 @@
         -: 1483:
         -: 1484:    template <class _Tp>
         -: 1485:        _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIiNS1_IiEEEEEEE7destroyIS4_EEvRS5_PT_ called 65 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorIiEEE7destroyIiEEvRS2_PT_ called 641 returned 100% blocks executed 100%
         -: 1486:        static void destroy(allocator_type& __a, _Tp* __p)
-      657: 1487:            {__destroy(__has_destroy<allocator_type, _Tp*>(), __a, __p);}
+      706: 1487:            {__destroy(__has_destroy<allocator_type, _Tp*>(), __a, __p);}
         -: 1488:
         -: 1489:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIiNS1_IiEEEEEEE8max_sizeERKS5_ called 10 returned 100% blocks executed 75%
+function _ZNSt3__116allocator_traitsINS_9allocatorIiEEE8max_sizeERKS2_ called 71 returned 100% blocks executed 75%
         -: 1490:    static size_type max_size(const allocator_type& __a) _NOEXCEPT
-      148: 1491:        {return __max_size(__has_max_size<const allocator_type>(), __a);}
+      162: 1491:        {return __max_size(__has_max_size<const allocator_type>(), __a);}
+branch  0 taken 100%
+branch  1 taken 0%
+branch  2 taken 100%
+branch  3 taken 0%
         -: 1492:
         -: 1493:    _LIBCPP_INLINE_VISIBILITY
         -: 1494:    static allocator_type
@@ -1561,14 +1580,17 @@
         -: 1556:        _LIBCPP_INLINE_VISIBILITY
         -: 1557:        static
         -: 1558:        void
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIiNS1_IiEEEEEEE20__construct_backwardIPS4_EEvRS5_T_SA_RSA_ called 10 returned 100% blocks executed 80%
         -: 1559:        __construct_backward(allocator_type& __a, _Ptr __begin1, _Ptr __end1, _Ptr& __end2)
         -: 1560:        {
-       18: 1561:            while (__end1 != __begin1)
+       20: 1561:            while (__end1 != __begin1)
+branch  0 taken 0%
+branch  1 taken 100%
         -: 1562:            {
     #####: 1563:                construct(__a, _VSTD::__to_raw_pointer(__end2-1), _VSTD::move_if_noexcept(*--__end1));
     #####: 1564:                --__end2;
         -: 1565:            }
-        9: 1566:        }
+       10: 1566:        }
         -: 1567:
         -: 1568:    template <class _Tp>
         -: 1569:        _LIBCPP_INLINE_VISIBILITY
@@ -1580,12 +1602,13 @@
         -: 1575:             is_trivially_move_constructible<_Tp>::value,
         -: 1576:            void
         -: 1577:        >::type
+function _ZNSt3__116allocator_traitsINS_9allocatorIiEEE20__construct_backwardIiEENS_9enable_ifIXaaoosr7is_sameIS2_NS1_IT_EEEE5valuentsr15__has_constructIS2_PS6_S6_EE5valuesr31is_trivially_move_constructibleIS6_EE5valueEvE4typeERS2_S8_S8_RS8_ called 71 returned 100% blocks executed 100%
         -: 1578:        __construct_backward(allocator_type& __a, _Tp* __begin1, _Tp* __end1, _Tp*& __end2)
         -: 1579:        {
-       65: 1580:            ptrdiff_t _Np = __end1 - __begin1;
-       65: 1581:            __end2 -= _Np;
-       65: 1582:            _VSTD::memcpy(__end2, __begin1, _Np * sizeof(_Tp));
-       65: 1583:        }
+       71: 1580:            ptrdiff_t _Np = __end1 - __begin1;
+       71: 1581:            __end2 -= _Np;
+       71: 1582:            _VSTD::memcpy(__end2, __begin1, _Np * sizeof(_Tp));
+       71: 1583:        }
         -: 1584:
         -: 1585:private:
         -: 1586:
@@ -1601,8 +1624,11 @@
         -: 1596:#ifndef _LIBCPP_HAS_NO_VARIADICS
         -: 1597:    template <class _Tp, class... _Args>
         -: 1598:        _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIiNS1_IiEEEEEEE11__constructIS4_JEEEvNS_17integral_constantIbLb1EEERS5_PT_DpOT0_ called 65 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIiNS1_IiEEEEEEE11__constructIS4_JS4_EEEvNS_17integral_constantIbLb1EEERS5_PT_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__116allocator_traitsINS_9allocatorIiEEE11__constructIiJEEEvNS_17integral_constantIbLb1EEERS2_PT_DpOT0_ called 614 returned 100% blocks executed 100%
         -: 1599:        static void __construct(true_type, allocator_type& __a, _Tp* __p, _Args&&... __args)
-      631: 1600:            {__a.construct(__p, _VSTD::forward<_Args>(__args)...);}
+      679: 1600:            {__a.construct(__p, _VSTD::forward<_Args>(__args)...);}
         -: 1601:    template <class _Tp, class... _Args>
         -: 1602:        _LIBCPP_INLINE_VISIBILITY
         -: 1603:        static void __construct(false_type, allocator_type&, _Tp* __p, _Args&&... __args)
@@ -1613,8 +1639,10 @@
         -: 1608:
         -: 1609:    template <class _Tp>
         -: 1610:        _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIiNS1_IiEEEEEEE9__destroyIS4_EEvNS_17integral_constantIbLb1EEERS5_PT_ called 65 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorIiEEE9__destroyIiEEvNS_17integral_constantIbLb1EEERS2_PT_ called 641 returned 100% blocks executed 100%
         -: 1611:        static void __destroy(true_type, allocator_type& __a, _Tp* __p)
-      657: 1612:            {__a.destroy(__p);}
+      706: 1612:            {__a.destroy(__p);}
         -: 1613:    template <class _Tp>
         -: 1614:        _LIBCPP_INLINE_VISIBILITY
         -: 1615:        static void __destroy(false_type, allocator_type&, _Tp* __p)
@@ -1623,8 +1651,10 @@
         -: 1618:            }
         -: 1619:
         -: 1620:    _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__116allocator_traitsINS_9allocatorINS_6vectorIiNS1_IiEEEEEEE10__max_sizeENS_17integral_constantIbLb1EEERKS5_ called 10 returned 100% blocks executed 100%
+function _ZNSt3__116allocator_traitsINS_9allocatorIiEEE10__max_sizeENS_17integral_constantIbLb1EEERKS2_ called 71 returned 100% blocks executed 100%
         -: 1621:    static size_type __max_size(true_type, const allocator_type& __a)
-       74: 1622:            {return __a.max_size();}
+       81: 1622:            {return __a.max_size();}
         -: 1623:    _LIBCPP_INLINE_VISIBILITY
         -: 1624:    static size_type __max_size(false_type, const allocator_type&)
         -: 1625:            {return numeric_limits<size_type>::max();}
@@ -1657,26 +1687,42 @@
         -: 1652:
         -: 1653:    template <class _Up> struct rebind {typedef allocator<_Up> other;};
         -: 1654:
-       68: 1655:    _LIBCPP_INLINE_VISIBILITY allocator() _NOEXCEPT {}
+function _ZNSt3__19allocatorINS_6vectorIiNS0_IiEEEEEC2Ev called 10 returned 100% blocks executed 100%
+function _ZNSt3__19allocatorIiEC2Ev called 65 returned 100% blocks executed 100%
+function _ZNSt3__19allocatorIcEC2Ev called 0 returned 0% blocks executed 0%
+       75: 1655:    _LIBCPP_INLINE_VISIBILITY allocator() _NOEXCEPT {}
         -: 1656:    template <class _Up> _LIBCPP_INLINE_VISIBILITY allocator(const allocator<_Up>&) _NOEXCEPT {}
         -: 1657:    _LIBCPP_INLINE_VISIBILITY pointer address(reference __x) const _NOEXCEPT
         -: 1658:        {return _VSTD::addressof(__x);}
         -: 1659:    _LIBCPP_INLINE_VISIBILITY const_pointer address(const_reference __x) const _NOEXCEPT
         -: 1660:        {return _VSTD::addressof(__x);}
+function _ZNSt3__19allocatorINS_6vectorIiNS0_IiEEEEE8allocateEmPKv called 10 returned 100% blocks executed 100%
+function _ZNSt3__19allocatorIiE8allocateEmPKv called 71 returned 100% blocks executed 100%
         -: 1661:    _LIBCPP_INLINE_VISIBILITY pointer allocate(size_type __n, allocator<void>::const_pointer = 0)
-       74: 1662:        {return static_cast<pointer>(_VSTD::__allocate(__n * sizeof(_Tp)));}
+       81: 1662:        {return static_cast<pointer>(_VSTD::__allocate(__n * sizeof(_Tp)));}
+function _ZNSt3__19allocatorIiE10deallocateEPim called 71 returned 100% blocks executed 75%
+function _ZNSt3__19allocatorINS_6vectorIiNS0_IiEEEEE10deallocateEPS3_m called 10 returned 100% blocks executed 75%
         -: 1663:    _LIBCPP_INLINE_VISIBILITY void deallocate(pointer __p, size_type) _NOEXCEPT
-      148: 1664:        {_VSTD::__deallocate((void*)__p);}
+      162: 1664:        {_VSTD::__deallocate((void*)__p);}
+branch  0 taken 100%
+branch  1 taken 0%
+branch  2 taken 100%
+branch  3 taken 0%
+function _ZNKSt3__19allocatorINS_6vectorIiNS0_IiEEEEE8max_sizeEv called 10 returned 100% blocks executed 100%
+function _ZNKSt3__19allocatorIiE8max_sizeEv called 71 returned 100% blocks executed 100%
         -: 1665:    _LIBCPP_INLINE_VISIBILITY size_type max_size() const _NOEXCEPT
-       74: 1666:        {return size_type(~0) / sizeof(_Tp);}
+       81: 1666:        {return size_type(~0) / sizeof(_Tp);}
         -: 1667:#if !defined(_LIBCPP_HAS_NO_RVALUE_REFERENCES) && !defined(_LIBCPP_HAS_NO_VARIADICS)
         -: 1668:    template <class _Up, class... _Args>
         -: 1669:        _LIBCPP_INLINE_VISIBILITY
         -: 1670:        void
+function _ZNSt3__19allocatorINS_6vectorIiNS0_IiEEEEE9constructIS3_JEEEvPT_DpOT0_ called 65 returned 100% blocks executed 100%
+function _ZNSt3__19allocatorINS_6vectorIiNS0_IiEEEEE9constructIS3_JS3_EEEvPT_DpOT0_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__19allocatorIiE9constructIiJEEEvPT_DpOT0_ called 614 returned 100% blocks executed 100%
         -: 1671:        construct(_Up* __p, _Args&&... __args)
         -: 1672:        {
-      631: 1673:            ::new((void*)__p) _Up(_VSTD::forward<_Args>(__args)...);
-      631: 1674:        }
+      679: 1673:            ::new((void*)__p) _Up(_VSTD::forward<_Args>(__args)...);
+      679: 1674:        }
         -: 1675:#else  // !defined(_LIBCPP_HAS_NO_RVALUE_REFERENCES) && !defined(_LIBCPP_HAS_NO_VARIADICS)
         -: 1676:        _LIBCPP_INLINE_VISIBILITY
         -: 1677:        void
@@ -1730,7 +1776,9 @@
         -: 1725:            ::new((void*)__p) _Tp(__a0, __a1);
         -: 1726:        }
         -: 1727:#endif  // !defined(_LIBCPP_HAS_NO_RVALUE_REFERENCES) && !defined(_LIBCPP_HAS_NO_VARIADICS)
-      657: 1728:    _LIBCPP_INLINE_VISIBILITY void destroy(pointer __p) {__p->~_Tp();}
+function _ZNSt3__19allocatorINS_6vectorIiNS0_IiEEEEE7destroyEPS3_ called 65 returned 100% blocks executed 100%
+function _ZNSt3__19allocatorIiE7destroyEPi called 641 returned 100% blocks executed 100%
+      706: 1728:    _LIBCPP_INLINE_VISIBILITY void destroy(pointer __p) {__p->~_Tp();}
         -: 1729:};
         -: 1730:
         -: 1731:template <class _Tp>
@@ -1988,8 +2036,10 @@
         -: 1983:        : __first_(_VSTD::forward<_T1_param>(__t1)) {}
         -: 1984:    _LIBCPP_INLINE_VISIBILITY explicit __libcpp_compressed_pair_imp(_T2_param __t2)
         -: 1985:        : __second_(_VSTD::forward<_T2_param>(__t2)) {}
+function _ZNSt3__128__libcpp_compressed_pair_impIPNS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EELj0EEC2ES5_S7_ called 10 returned 100% blocks executed 100%
+function _ZNSt3__128__libcpp_compressed_pair_impIPiRNS_9allocatorIiEELj0EEC2ES1_S4_ called 71 returned 100% blocks executed 100%
         -: 1986:    _LIBCPP_INLINE_VISIBILITY __libcpp_compressed_pair_imp(_T1_param __t1, _T2_param __t2)
-       74: 1987:        : __first_(_VSTD::forward<_T1_param>(__t1)), __second_(_VSTD::forward<_T2_param>(__t2)) {}
+       81: 1987:        : __first_(_VSTD::forward<_T1_param>(__t1)), __second_(_VSTD::forward<_T2_param>(__t2)) {}
         -: 1988:
         -: 1989:#if defined(_LIBCPP_HAS_NO_DEFAULTED_FUNCTIONS) && !defined(_LIBCPP_HAS_NO_RVALUE_REFERENCES)
         -: 1990:
@@ -2044,10 +2094,16 @@
         -: 2039:
         -: 2040:#endif  // _LIBCPP_HAS_NO_VARIADICS
         -: 2041:
-      148: 2042:    _LIBCPP_INLINE_VISIBILITY _T1_reference       first() _NOEXCEPT       {return __first_;}
+function _ZNSt3__128__libcpp_compressed_pair_impIPNS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EELj0EE5firstEv called 20 returned 100% blocks executed 100%
+function _ZNSt3__128__libcpp_compressed_pair_impIPiRNS_9allocatorIiEELj0EE5firstEv called 142 returned 100% blocks executed 100%
+      162: 2042:    _LIBCPP_INLINE_VISIBILITY _T1_reference       first() _NOEXCEPT       {return __first_;}
+function _ZNKSt3__128__libcpp_compressed_pair_impIPNS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EELj0EE5firstEv called 0 returned 0% blocks executed 0%
+function _ZNKSt3__128__libcpp_compressed_pair_impIPiRNS_9allocatorIiEELj0EE5firstEv called 4 returned 100% blocks executed 100%
         4: 2043:    _LIBCPP_INLINE_VISIBILITY _T1_const_reference first() const _NOEXCEPT {return __first_;}
         -: 2044:
-      161: 2045:    _LIBCPP_INLINE_VISIBILITY _T2_reference       second() _NOEXCEPT       {return __second_;}
+function _ZNSt3__128__libcpp_compressed_pair_impIPNS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EELj0EE6secondEv called 20 returned 100% blocks executed 100%
+function _ZNSt3__128__libcpp_compressed_pair_impIPiRNS_9allocatorIiEELj0EE6secondEv called 155 returned 100% blocks executed 100%
+      175: 2045:    _LIBCPP_INLINE_VISIBILITY _T2_reference       second() _NOEXCEPT       {return __second_;}
         -: 2046:    _LIBCPP_INLINE_VISIBILITY _T2_const_reference second() const _NOEXCEPT {return __second_;}
         -: 2047:
         -: 2048:    _LIBCPP_INLINE_VISIBILITY void swap(__libcpp_compressed_pair_imp& __x)
@@ -2166,11 +2222,15 @@
         -: 2161:    typedef const typename remove_reference<_T1>::type& _T1_const_reference;
         -: 2162:    typedef const _T2&                                        _T2_const_reference;
         -: 2163:
+function _ZNSt3__128__libcpp_compressed_pair_impINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5__repES5_Lj2EEC2Ev called 0 returned 0% blocks executed 0%
     #####: 2164:    _LIBCPP_INLINE_VISIBILITY __libcpp_compressed_pair_imp() {}
-       68: 2165:    _LIBCPP_INLINE_VISIBILITY explicit __libcpp_compressed_pair_imp(_T1_param __t1)
-      136: 2166:        : __first_(_VSTD::forward<_T1_param>(__t1)) {}
+function _ZNSt3__128__libcpp_compressed_pair_impIPNS_6vectorIiNS_9allocatorIiEEEENS2_IS4_EELj2EEC2ES5_ called 10 returned 100% blocks executed 100%
+function _ZNSt3__128__libcpp_compressed_pair_impIPiNS_9allocatorIiEELj2EEC2ES1_ called 65 returned 100% blocks executed 100%
+       75: 2165:    _LIBCPP_INLINE_VISIBILITY explicit __libcpp_compressed_pair_imp(_T1_param __t1)
+      150: 2166:        : __first_(_VSTD::forward<_T1_param>(__t1)) {}
         -: 2167:    _LIBCPP_INLINE_VISIBILITY explicit __libcpp_compressed_pair_imp(_T2_param __t2)
         -: 2168:        : _T2(_VSTD::forward<_T2_param>(__t2)) {}
+function _ZNSt3__128__libcpp_compressed_pair_impIPiNS_9allocatorIiEELj2EEC2ES1_S3_ called 0 returned 0% blocks executed 0%
         -: 2169:    _LIBCPP_INLINE_VISIBILITY __libcpp_compressed_pair_imp(_T1_param __t1, _T2_param __t2)
         -: 2170:        _NOEXCEPT_(is_nothrow_move_constructible<_T1>::value &&
         -: 2171:                   is_nothrow_move_constructible<_T2>::value)
@@ -2228,11 +2288,20 @@
         -: 2223:
         -: 2224:#endif  // _LIBCPP_HAS_NO_VARIADICS
         -: 2225:
-      142: 2226:    _LIBCPP_INLINE_VISIBILITY _T1_reference       first() _NOEXCEPT       {return __first_;}
-      434: 2227:    _LIBCPP_INLINE_VISIBILITY _T1_const_reference first() const _NOEXCEPT {return __first_;}
+function _ZNSt3__128__libcpp_compressed_pair_impIPNS_6vectorIiNS_9allocatorIiEEEENS2_IS4_EELj2EE5firstEv called 20 returned 100% blocks executed 100%
+function _ZNSt3__128__libcpp_compressed_pair_impIPiNS_9allocatorIiEELj2EE5firstEv called 136 returned 100% blocks executed 100%
+      156: 2226:    _LIBCPP_INLINE_VISIBILITY _T1_reference       first() _NOEXCEPT       {return __first_;}
+function _ZNKSt3__128__libcpp_compressed_pair_impIPiNS_9allocatorIiEELj2EE5firstEv called 416 returned 100% blocks executed 100%
+function _ZNKSt3__128__libcpp_compressed_pair_impIPNS_6vectorIiNS_9allocatorIiEEEENS2_IS4_EELj2EE5firstEv called 60 returned 100% blocks executed 100%
+function _ZNKSt3__128__libcpp_compressed_pair_impINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5__repES5_Lj2EE5firstEv called 0 returned 0% blocks executed 0%
+      476: 2227:    _LIBCPP_INLINE_VISIBILITY _T1_const_reference first() const _NOEXCEPT {return __first_;}
         -: 2228:
-      854: 2229:    _LIBCPP_INLINE_VISIBILITY _T2_reference       second() _NOEXCEPT       {return *this;}
-       74: 2230:    _LIBCPP_INLINE_VISIBILITY _T2_const_reference second() const _NOEXCEPT {return *this;}
+function _ZNSt3__128__libcpp_compressed_pair_impIPiNS_9allocatorIiEELj2EE6secondEv called 829 returned 100% blocks executed 100%
+function _ZNSt3__128__libcpp_compressed_pair_impIPNS_6vectorIiNS_9allocatorIiEEEENS2_IS4_EELj2EE6secondEv called 95 returned 100% blocks executed 100%
+      924: 2229:    _LIBCPP_INLINE_VISIBILITY _T2_reference       second() _NOEXCEPT       {return *this;}
+function _ZNKSt3__128__libcpp_compressed_pair_impIPNS_6vectorIiNS_9allocatorIiEEEENS2_IS4_EELj2EE6secondEv called 10 returned 100% blocks executed 100%
+function _ZNKSt3__128__libcpp_compressed_pair_impIPiNS_9allocatorIiEELj2EE6secondEv called 71 returned 100% blocks executed 100%
+       81: 2230:    _LIBCPP_INLINE_VISIBILITY _T2_const_reference second() const _NOEXCEPT {return *this;}
         -: 2231:
         -: 2232:    _LIBCPP_INLINE_VISIBILITY void swap(__libcpp_compressed_pair_imp& __x)
         -: 2233:        _NOEXCEPT_(__is_nothrow_swappable<_T1>::value &&
@@ -2345,13 +2414,25 @@
         -: 2340:    typedef typename base::_T1_const_reference _T1_const_reference;
         -: 2341:    typedef typename base::_T2_const_reference _T2_const_reference;
         -: 2342:
+function _ZNSt3__117__compressed_pairINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5__repES5_EC1Ev called 0 returned 0% blocks executed 0%
+function _ZNSt3__117__compressed_pairINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5__repES5_EC2Ev called 0 returned 0% blocks executed 0%
     #####: 2343:    _LIBCPP_INLINE_VISIBILITY __compressed_pair() {}
+function _ZNSt3__117__compressed_pairIPNS_6vectorIiNS_9allocatorIiEEEENS2_IS4_EEEC1ES5_ called 10 returned 100% blocks executed 100%
+function _ZNSt3__117__compressed_pairIPNS_6vectorIiNS_9allocatorIiEEEENS2_IS4_EEEC2ES5_ called 10 returned 100% blocks executed 100%
+function _ZNSt3__117__compressed_pairIPiNS_9allocatorIiEEEC1ES1_ called 65 returned 100% blocks executed 100%
+function _ZNSt3__117__compressed_pairIPiNS_9allocatorIiEEEC2ES1_ called 65 returned 100% blocks executed 100%
         -: 2344:    _LIBCPP_INLINE_VISIBILITY explicit __compressed_pair(_T1_param __t1)
-      136: 2345:        : base(_VSTD::forward<_T1_param>(__t1)) {}
+      150: 2345:        : base(_VSTD::forward<_T1_param>(__t1)) {}
         -: 2346:    _LIBCPP_INLINE_VISIBILITY explicit __compressed_pair(_T2_param __t2)
         -: 2347:        : base(_VSTD::forward<_T2_param>(__t2)) {}
+function _ZNSt3__117__compressed_pairIPNS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEEC1ES5_S7_ called 10 returned 100% blocks executed 100%
+function _ZNSt3__117__compressed_pairIPNS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEEC2ES5_S7_ called 10 returned 100% blocks executed 100%
+function _ZNSt3__117__compressed_pairIPiNS_9allocatorIiEEEC1ES1_S3_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__117__compressed_pairIPiNS_9allocatorIiEEEC2ES1_S3_ called 0 returned 0% blocks executed 0%
+function _ZNSt3__117__compressed_pairIPiRNS_9allocatorIiEEEC1ES1_S4_ called 71 returned 100% blocks executed 100%
+function _ZNSt3__117__compressed_pairIPiRNS_9allocatorIiEEEC2ES1_S4_ called 71 returned 100% blocks executed 100%
         -: 2348:    _LIBCPP_INLINE_VISIBILITY __compressed_pair(_T1_param __t1, _T2_param __t2)
-      148: 2349:        : base(_VSTD::forward<_T1_param>(__t1), _VSTD::forward<_T2_param>(__t2)) {}
+      162: 2349:        : base(_VSTD::forward<_T1_param>(__t1), _VSTD::forward<_T2_param>(__t2)) {}
         -: 2350:
         -: 2351:#if defined(_LIBCPP_HAS_NO_DEFAULTED_FUNCTIONS) && !defined(_LIBCPP_HAS_NO_RVALUE_REFERENCES)
         -: 2352:
@@ -2400,11 +2481,26 @@
         -: 2395:
         -: 2396:#endif  // _LIBCPP_HAS_NO_VARIADICS
         -: 2397:
-      290: 2398:    _LIBCPP_INLINE_VISIBILITY _T1_reference       first() _NOEXCEPT       {return base::first();}
-      438: 2399:    _LIBCPP_INLINE_VISIBILITY _T1_const_reference first() const _NOEXCEPT {return base::first();}
+function _ZNSt3__117__compressed_pairIPNS_6vectorIiNS_9allocatorIiEEEENS2_IS4_EEE5firstEv called 20 returned 100% blocks executed 100%
+function _ZNSt3__117__compressed_pairIPNS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEE5firstEv called 20 returned 100% blocks executed 100%
+function _ZNSt3__117__compressed_pairIPiNS_9allocatorIiEEE5firstEv called 136 returned 100% blocks executed 100%
+function _ZNSt3__117__compressed_pairIPiRNS_9allocatorIiEEE5firstEv called 142 returned 100% blocks executed 100%
+      318: 2398:    _LIBCPP_INLINE_VISIBILITY _T1_reference       first() _NOEXCEPT       {return base::first();}
+function _ZNKSt3__117__compressed_pairIPiNS_9allocatorIiEEE5firstEv called 416 returned 100% blocks executed 100%
+function _ZNKSt3__117__compressed_pairIPNS_6vectorIiNS_9allocatorIiEEEENS2_IS4_EEE5firstEv called 60 returned 100% blocks executed 100%
+function _ZNKSt3__117__compressed_pairIPNS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEE5firstEv called 0 returned 0% blocks executed 0%
+function _ZNKSt3__117__compressed_pairIPiRNS_9allocatorIiEEE5firstEv called 4 returned 100% blocks executed 100%
+function _ZNKSt3__117__compressed_pairINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE5__repES5_E5firstEv called 0 returned 0% blocks executed 0%
+      480: 2399:    _LIBCPP_INLINE_VISIBILITY _T1_const_reference first() const _NOEXCEPT {return base::first();}
         -: 2400:
-     1015: 2401:    _LIBCPP_INLINE_VISIBILITY _T2_reference       second() _NOEXCEPT       {return base::second();}
-       74: 2402:    _LIBCPP_INLINE_VISIBILITY _T2_const_reference second() const _NOEXCEPT {return base::second();}
+function _ZNSt3__117__compressed_pairIPiNS_9allocatorIiEEE6secondEv called 829 returned 100% blocks executed 100%
+function _ZNSt3__117__compressed_pairIPNS_6vectorIiNS_9allocatorIiEEEENS2_IS4_EEE6secondEv called 95 returned 100% blocks executed 100%
+function _ZNSt3__117__compressed_pairIPNS_6vectorIiNS_9allocatorIiEEEERNS2_IS4_EEE6secondEv called 20 returned 100% blocks executed 100%
+function _ZNSt3__117__compressed_pairIPiRNS_9allocatorIiEEE6secondEv called 155 returned 100% blocks executed 100%
+     1099: 2401:    _LIBCPP_INLINE_VISIBILITY _T2_reference       second() _NOEXCEPT       {return base::second();}
+function _ZNKSt3__117__compressed_pairIPNS_6vectorIiNS_9allocatorIiEEEENS2_IS4_EEE6secondEv called 10 returned 100% blocks executed 100%
+function _ZNKSt3__117__compressed_pairIPiNS_9allocatorIiEEE6secondEv called 71 returned 100% blocks executed 100%
+       81: 2402:    _LIBCPP_INLINE_VISIBILITY _T2_const_reference second() const _NOEXCEPT {return base::second();}
         -: 2403:
         -: 2404:    _LIBCPP_INLINE_VISIBILITY void swap(__compressed_pair& __x)
         -: 2405:        _NOEXCEPT_(__is_nothrow_swappable<_T1>::value &&

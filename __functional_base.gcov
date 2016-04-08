@@ -87,6 +87,7 @@
         -:   82:template <class _Tp>
         -:   83:inline _LIBCPP_INLINE_VISIBILITY
         -:   84:_Tp*
+function _ZNSt3__19addressofIKcEEPT_RS2_ called 0 returned 0% blocks executed 0%
         -:   85:addressof(_Tp& __x) _NOEXCEPT
         -:   86:{
     #####:   87:    return (_Tp*)&reinterpret_cast<const volatile char&>(__x);

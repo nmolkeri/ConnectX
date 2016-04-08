@@ -339,7 +339,8 @@
         -:  334:               }
         -:  335:
         -:  336:    void init(void* __sb);
-      355:  337:    _LIBCPP_ALWAYS_INLINE void* rdbuf() const {return __rdbuf_;}
+function _ZNKSt3__18ios_base5rdbufEv called 369 returned 100% blocks executed 100%
+      369:  337:    _LIBCPP_ALWAYS_INLINE void* rdbuf() const {return __rdbuf_;}
         -:  338:
         -:  339:    _LIBCPP_ALWAYS_INLINE
         -:  340:    void rdbuf(void* __sb)
@@ -437,9 +438,10 @@
         -:  432:
         -:  433:inline _LIBCPP_INLINE_VISIBILITY
         -:  434:ios_base::fmtflags
+function _ZNKSt3__18ios_base5flagsEv called 369 returned 100% blocks executed 100%
         -:  435:ios_base::flags() const
         -:  436:{
-      355:  437:    return __fmtflags_;
+      369:  437:    return __fmtflags_;
         -:  438:}
         -:  439:
         -:  440:inline _LIBCPP_INLINE_VISIBILITY
@@ -499,18 +501,20 @@
         -:  494:
         -:  495:inline _LIBCPP_INLINE_VISIBILITY
         -:  496:streamsize
+function _ZNKSt3__18ios_base5widthEv called 369 returned 100% blocks executed 100%
         -:  497:ios_base::width() const
         -:  498:{
-      355:  499:    return __width_;
+      369:  499:    return __width_;
         -:  500:}
         -:  501:
         -:  502:inline _LIBCPP_INLINE_VISIBILITY
         -:  503:streamsize
+function _ZNSt3__18ios_base5widthEl called 369 returned 100% blocks executed 100%
         -:  504:ios_base::width(streamsize __wide)
         -:  505:{
-      355:  506:    streamsize __r = __width_;
-      355:  507:    __width_ = __wide;
-      355:  508:    return __r;
+      369:  506:    streamsize __r = __width_;
+      369:  507:    __width_ = __wide;
+      369:  508:    return __r;
         -:  509:}
         -:  510:
         -:  511:// iostate
@@ -524,6 +528,7 @@
         -:  519:
         -:  520:inline _LIBCPP_INLINE_VISIBILITY
         -:  521:void
+function _ZNSt3__18ios_base8setstateEj called 0 returned 0% blocks executed 0%
         -:  522:ios_base::setstate(iostate __state)
         -:  523:{
     #####:  524:    clear(__rdstate_ | __state);
@@ -591,6 +596,7 @@
         -:  586:    _LIBCPP_ALWAYS_INLINE bool operator!() const    {return  fail();}
         -:  587:    _LIBCPP_ALWAYS_INLINE iostate rdstate() const   {return ios_base::rdstate();}
         -:  588:    _LIBCPP_ALWAYS_INLINE void clear(iostate __state = goodbit) {ios_base::clear(__state);}
+function _ZNSt3__19basic_iosIcNS_11char_traitsIcEEE8setstateEj called 0 returned 0% blocks executed 0%
     #####:  589:    _LIBCPP_ALWAYS_INLINE void setstate(iostate __state) {ios_base::setstate(__state);}
         -:  590:    _LIBCPP_ALWAYS_INLINE bool good() const {return ios_base::good();}
         -:  591:    _LIBCPP_ALWAYS_INLINE bool eof() const  {return ios_base::eof();}
@@ -696,9 +702,10 @@
         -:  691:template <class _CharT, class _Traits>
         -:  692:inline _LIBCPP_INLINE_VISIBILITY
         -:  693:basic_streambuf<_CharT, _Traits>*
+function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5rdbufEv called 369 returned 100% blocks executed 100%
         -:  694:basic_ios<_CharT, _Traits>::rdbuf() const
         -:  695:{
-      355:  696:    return static_cast<basic_streambuf<char_type, traits_type>*>(ios_base::rdbuf());
+      369:  696:    return static_cast<basic_streambuf<char_type, traits_type>*>(ios_base::rdbuf());
         -:  697:}
         -:  698:
         -:  699:template <class _CharT, class _Traits>
@@ -734,19 +741,27 @@
         -:  729:template <class _CharT, class _Traits>
         -:  730:inline _LIBCPP_INLINE_VISIBILITY
         -:  731:_CharT
+function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE5widenEc called 45 returned 100% blocks executed 66%
         -:  732:basic_ios<_CharT, _Traits>::widen(char __c) const
         -:  733:{
-      123:  734:    return use_facet<ctype<char_type> >(getloc()).widen(__c);
+      135:  734:    return use_facet<ctype<char_type> >(getloc()).widen(__c);
+branch  0 taken 100%
+branch  1 taken 0%
+branch  2 taken 100%
+branch  3 taken 0%
     #####:  735:}
         -:  736:
         -:  737:template <class _CharT, class _Traits>
         -:  738:inline _LIBCPP_INLINE_VISIBILITY
         -:  739:_CharT
+function _ZNKSt3__19basic_iosIcNS_11char_traitsIcEEE4fillEv called 369 returned 100% blocks executed 100%
         -:  740:basic_ios<_CharT, _Traits>::fill() const
         -:  741:{
-      355:  742:    if (traits_type::eq_int_type(traits_type::eof(), __fill_))
-       41:  743:        __fill_ = widen(' ');
-      355:  744:    return __fill_;
+      369:  742:    if (traits_type::eq_int_type(traits_type::eof(), __fill_))
+branch  0 taken 12%
+branch  1 taken 88%
+       45:  743:        __fill_ = widen(' ');
+      369:  744:    return __fill_;
         -:  745:}
         -:  746:
         -:  747:template <class _CharT, class _Traits>

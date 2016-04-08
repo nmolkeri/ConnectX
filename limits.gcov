@@ -214,7 +214,8 @@
         -:  209:    static _LIBCPP_CONSTEXPR const type __min = __libcpp_compute_min<type, digits, is_signed>::value;
         -:  210:    static _LIBCPP_CONSTEXPR const type __max = is_signed ? type(type(~0) ^ __min) : type(~0);
         -:  211:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR type min() _NOEXCEPT {return __min;}
-       74:  212:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR type max() _NOEXCEPT {return __max;}
+function _ZNSt3__123__libcpp_numeric_limitsImLb1EE3maxEv called 81 returned 100% blocks executed 100%
+       81:  212:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR type max() _NOEXCEPT {return __max;}
         -:  213:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR type lowest() _NOEXCEPT {return min();}
         -:  214:
         -:  215:    static _LIBCPP_CONSTEXPR const bool is_integer = true;
@@ -450,7 +451,8 @@
         -:  445:public:
         -:  446:    static _LIBCPP_CONSTEXPR const bool is_specialized = __base::is_specialized;
         -:  447:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR type min() _NOEXCEPT {return __base::min();}
-       74:  448:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR type max() _NOEXCEPT {return __base::max();}
+function _ZNSt3__114numeric_limitsImE3maxEv called 81 returned 100% blocks executed 100%
+       81:  448:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR type max() _NOEXCEPT {return __base::max();}
         -:  449:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR type lowest() _NOEXCEPT {return __base::lowest();}
         -:  450:
         -:  451:    static _LIBCPP_CONSTEXPR const int  digits = __base::digits;

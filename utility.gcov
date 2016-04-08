@@ -242,6 +242,7 @@
         -:  237:#else  // _LIBCPP_HAS_NO_RVALUE_REFERENCES
         -:  238:const _Tp&
         -:  239:#endif
+function _ZNSt3__116move_if_noexceptINS_6vectorIiNS_9allocatorIiEEEEEENS_11conditionalIXaantsr29is_nothrow_move_constructibleIT_EE5valuesr21is_copy_constructibleIS6_EE5valueERKS6_OS6_E4typeERS6_ called 0 returned 0% blocks executed 0%
         -:  240:move_if_noexcept(_Tp& __x) _NOEXCEPT
         -:  241:{
     #####:  242:    return _VSTD::move(__x);

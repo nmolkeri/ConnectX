@@ -154,21 +154,23 @@
         -:  149:
         -:  150:_LIBCPP_BEGIN_NAMESPACE_STD
         -:  151:
+function _ZNSt3__110__allocateEm called 81 returned 100% blocks executed 100%
         -:  152:inline _LIBCPP_INLINE_VISIBILITY void *__allocate(size_t __size) {
         -:  153:#ifdef _LIBCPP_HAS_NO_BUILTIN_OPERATOR_NEW_DELETE
         -:  154:  return ::operator new(__size);
         -:  155:#else
-       74:  156:  return __builtin_operator_new(__size);
+       81:  156:  return __builtin_operator_new(__size);
         -:  157:#endif
         -:  158:}
         -:  159:
+function _ZNSt3__112__deallocateEPv called 81 returned 100% blocks executed 100%
         -:  160:inline _LIBCPP_INLINE_VISIBILITY void __deallocate(void *__ptr) {
         -:  161:#ifdef _LIBCPP_HAS_NO_BUILTIN_OPERATOR_NEW_DELETE
         -:  162:  ::operator delete(__ptr);
         -:  163:#else
-       74:  164:  __builtin_operator_delete(__ptr);
+       81:  164:  __builtin_operator_delete(__ptr);
         -:  165:#endif
-       74:  166:}
+       81:  166:}
         -:  167:
         -:  168:_LIBCPP_END_NAMESPACE_STD
         -:  169:

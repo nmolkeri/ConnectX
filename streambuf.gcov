@@ -360,9 +360,10 @@
         -:  355:template <class _CharT, class _Traits>
         -:  356:inline _LIBCPP_INLINE_VISIBILITY
         -:  357:streamsize
+function _ZNSt3__115basic_streambufIcNS_11char_traitsIcEEE5sputnEPKcl called 369 returned 100% blocks executed 100%
         -:  358:basic_streambuf<_CharT, _Traits>::sputn(const char_type* __s, streamsize __n)
         -:  359:{
-      355:  360:    return xsputn(__s, __n);
+      369:  360:    return xsputn(__s, __n);
         -:  361:}
         -:  362:
         -:  363:template <class _CharT, class _Traits>
