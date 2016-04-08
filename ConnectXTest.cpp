@@ -35,7 +35,6 @@ TEST(ConnectXTest, sanityCheck)
 TEST(ConnectXTest, negativeInit) //Getting garbage value for width out of bound
 {
     ConnectX x(-10,1,1);
-   // x.showBoard();
     ASSERT_EQ(EMPTY, x.at(6,0)); //Testing the width
     ASSERT_EQ(INVALID, x.at(7,0)); //Testing Width outOfBound
     ASSERT_EQ(EMPTY, x.at(0,5)); //Testing Height
@@ -73,8 +72,8 @@ TEST(ConnectXTest, inBoundPlace)
 {
     ConnectX x(10,10,1);
     x.placePiece(1);
-    x.showBoard();
-    ASSERT_TRUE(x.at(9,1));
+   // x.showBoard();
+    ASSERT_GT(x.at(1,9), EMPTY);
 }
 
 TEST(ConnectXTest, blackTurn)
@@ -82,7 +81,7 @@ TEST(ConnectXTest, blackTurn)
     ConnectX x(10,10,1);
     int flag = x.whoseTurn();
     ASSERT_EQ(BLACK,flag);
-    x.showBoard();
+    //x.showBoard();
 }
 
 TEST(ConnectXTest, whiteTurn)
@@ -102,8 +101,15 @@ TEST(ConnectXTest, invalidPlace)
 }
 
 
+TEST(ConnectXTest, negativeOutOfBounds)
+{
+    ConnectX x(10,10,1);
+    ASSERT_EQ(INVALID, x.at(-1, 2));
+    ASSERT_EQ(INVALID, x.at(2,-1));
+}
+
 //TEST(ConnectXTest,)
 //{
 //    
 //}
-//
+

@@ -1,0 +1,131 @@
+        -:    0:Source:ConnectX.cpp
+        -:    0:Graph:ConnectX.gcno
+        -:    0:Data:ConnectX.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "ConnectX.h"
+        -:    2:#include <iostream>
+        -:    3:using namespace std;
+        -:    4:// constructor provides customized dimensions and number of
+        -:    5:// sequential pieces (x) it takes to win the game
+        9:    6:ConnectX::ConnectX(int wide, int high, int x)
+        9:    7:{   
+        -:    8:	//invalid input resets everything to default settings
+       25:    9:	if( wide <= 0 || high <= 0 || x <= 0)
+        -:   10:	{
+        1:   11:		wide=DEFAULT_WIDTH;
+        1:   12:		high=DEFAULT_HEIGHT;
+        1:   13:		x=DEFAULT_TO_WIN;
+        1:   14:	}
+        -:   15:
+        9:   16:	board.resize(high);
+      136:   17:	for(int i=0; i<high; i++)
+        -:   18:	{
+      118:   19:		board[i].resize(wide);
+     1262:   20:		for(int j=0; j<wide; j++)
+        -:   21:		{
+     1716:   22:			board[i][j] = EMPTY;
+      572:   23:		}
+       59:   24:	}	
+        9:   25:	width = wide;
+        9:   26:	height = high;
+        9:   27:	toWin = x;
+        9:   28:	turn = BLACK;
+       18:   29:}
+        -:   30:
+        -:   31:// changes turn to reflect whose turn it is
+        -:   32:void ConnectX::toggleTurn()
+        -:   33:{
+        7:   34:	if(turn == WHITE)
+        -:   35:	{
+        -:   36:        //cout<<"Toggling turn to black"<<endl;
+        -:   37:        
+        1:   38:		turn = BLACK;
+        -:   39:        //cout<<"turn = "<<turn<<endl;
+        1:   40:	}
+        -:   41:	else
+        6:   42:		turn = WHITE;
+        7:   43:}
+        -:   44:
+        -:   45:// returns whether or not the provided location is a valid
+        -:   46:// space in the board
+        -:   47:bool ConnectX::inBounds(int w, int h)
+        -:   48:{
+        -:   49:	bool inside;
+      440:   50:	if( w>=width || w<0 )
+        3:   51:		inside = false;
+        -:   52:	else
+      218:   53:		inside = true;
+        -:   54:
+      442:   55:	if( h<0 || h>=height )
+        2:   56:		inside = false;
+        -:   57:	else
+      219:   58:		inside = true;
+        -:   59:
+      221:   60:	return inside;
+        -:   61:}
+        -:   62:
+        -:   63:// Prints out the board to the command line, showing both
+        -:   64:// empty places and where each player has placed pieces
+        -:   65:void ConnectX::showBoard()
+        -:   66:{
+        2:   67:	std::cout<<"   ";
+       44:   68:	for(int w = 0; w < width; w++)
+        -:   69:	{
+       20:   70:		std::cout<<"["<<w<<"]";
+       20:   71:	}
+        2:   72:	std::cout<<std::endl;
+       44:   73:	for(int h = 0; h < height; h++)
+        -:   74:	{
+       20:   75:		std::cout<<"["<<h<<"]";
+      440:   76:		for(int w = 0; w < width; w++)
+        -:   77:		{
+        -:   78:			char place;
+      200:   79:			Piece val = at(w,h);
+      200:   80:			if(val == BLACK)
+        1:   81:				place = 'B';
+      199:   82:			else if( val == WHITE )
+    #####:   83:				place = 'W';
+        -:   84:			else
+      199:   85:				place = ' ';
+      200:   86:			std::cout<<"["<<place<<"]";
+      200:   87:		}
+       20:   88:		std::cout<<std::endl;
+       20:   89:	}
+        2:   90:}
+        -:   91:
+        -:   92:// Returns whose turn it is (BLACK or WHITE)
+        -:   93:Piece ConnectX::whoseTurn()
+        -:   94:{
+        2:   95:	return turn;
+        -:   96:}
+        -:   97:
+        -:   98:// Retrieves the value at a provided (w,h) location in the board or returns
+        -:   99:// INVALID if the provided location is not within the board
+        -:  100:Piece ConnectX::at(int w, int h)
+        -:  101:{
+      215:  102:	if( inBounds(w,h) )
+        -:  103:	{
+      213:  104:		return board[h][w];
+        -:  105:	}
+        -:  106:	else
+        2:  107:		return INVALID;
+      215:  108:}
+        -:  109:
+        -:  110:// Puts the current player's piece in a vertical column, where the piece falls
+        -:  111:// to the lowest empty position available in the board. Placing a piece in a 
+        -:  112:// "bad" column (such as a column that doesn't exist or is already full of 
+        -:  113:// pieces) results in the player just losing their turn
+        -:  114:void ConnectX::placePiece(int column)
+        -:  115:{
+       16:  116:	for(int i=height-1; i>=0; i--)
+        -:  117:	{
+       13:  118:		if( at(column,i) == EMPTY && inBounds(column,i) )
+        -:  119:		{
+        6:  120:			board[i][column] = turn;
+        6:  121:			break;
+        -:  122:		}
+        1:  123:	}
+        -:  124:
+        7:  125:	toggleTurn();
+        7:  126:}
