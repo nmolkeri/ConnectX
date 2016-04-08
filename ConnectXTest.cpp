@@ -58,8 +58,8 @@ TEST(ConnectXTest, outBounds)
     ConnectX x(10,10,1);
     x.placePiece(1);
     int flag = x.at(12,12);
-    cout<<"out bounds flag = "<<flag<<endl;
-    ASSERT_FALSE(flag);
+    //cout<<"out bounds flag = "<<flag<<endl;
+    ASSERT_EQ(INVALID, flag);
 }
 
 TEST(ConnectXTest, inBoundPlace)
@@ -94,6 +94,7 @@ TEST(ConnectXTest, invalidPlace)
     x.placePiece(1);
     ASSERT_EQ(INVALID, x.at(1,1));
 }
+
 
 //TEST(ConnectXTest,)
 //{
