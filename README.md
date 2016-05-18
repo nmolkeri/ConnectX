@@ -1,4 +1,5 @@
 # ConnectX Bug report
+[![Build Status](https://travis-ci.org/nmolkeri/ConnectX.svg?branch=master)](https://travis-ci.org/nmolkeri/ConnectX)
 
 - The bug is in the (Piece at(int, int);) function.
 - Bug can be found when accessing the width which is out of bound of the board.
