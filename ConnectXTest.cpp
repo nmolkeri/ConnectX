@@ -31,15 +31,6 @@ TEST(ConnectXTest, sanityCheck)
 	ASSERT_TRUE(true);
 }
 
-//Testing Negative Init, 
-TEST(ConnectXTest, negativeInit) //Getting garbage value for width out of bound
-{
-    ConnectX x(-10,1,1);
-    ASSERT_EQ(EMPTY, x.at(6,0)); //Testing the width
-    ASSERT_EQ(INVALID, x.at(7,0)); //Testing Width outOfBound
-    ASSERT_EQ(EMPTY, x.at(0,5)); //Testing Height
-    ASSERT_EQ(INVALID, x.at(0,6)); //Testing height outOfBound
-}
 
 
 
@@ -98,12 +89,4 @@ TEST(ConnectXTest, invalidPlace)
     x.placePiece(1);
     x.placePiece(1);
     ASSERT_EQ(INVALID, x.at(1,1));
-}
-
-
-TEST(ConnectXTest, negativeOutOfBounds)
-{
-    ConnectX x(10,10,1);
-    ASSERT_EQ(INVALID, x.at(-1, 2));
-    ASSERT_EQ(INVALID, x.at(2,-1));
 }

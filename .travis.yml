@@ -3,4 +3,4 @@ language: cpp
 compiler:
    -g++
    
-script: make clean && make 
+script: make clean && make && ConnectXTest 
