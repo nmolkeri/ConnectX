@@ -3,6 +3,11 @@
 using namespace std;
 // constructor provides customized dimensions and number of
 // sequential pieces (x) it takes to win the game
+ConnectX::ConnectX()
+{
+   
+}
+
 ConnectX::ConnectX(int wide, int high, int x)
 {   
 	//invalid input resets everything to default settings
@@ -33,10 +38,7 @@ void ConnectX::toggleTurn()
 {
 	if(turn == WHITE)
 	{
-        //cout<<"Toggling turn to black"<<endl;
-        
 		turn = BLACK;
-        //cout<<"turn = "<<turn<<endl;
 	}
 	else
 		turn = WHITE;

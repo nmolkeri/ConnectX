@@ -24,6 +24,7 @@ public:
 	static const Piece WHITE = 1;
 	static const Piece BLACK = 2;
 	ConnectX(int,int,int);
+   ConnectX();
 	ConnectX() : ConnectX(DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_TO_WIN) {}
 	Piece at(int,int);
 	void showBoard();
