@@ -2,5 +2,5 @@ language: cpp
 
 compiler:
    -g++
-   
-script: make clean && make && ConnectXTest 
+  
+script: g++ main.cpp ConnectX.h ConnectX.cpp 
